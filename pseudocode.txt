@@ -14,29 +14,29 @@ FUNCTION getHumanChoice()
     RETURN choice
 ENDFUCTION
 
-FUNCTION playRound(humanChoice, computerChoice)
-    SET humanChoice to lowercase
-    IF humanChoice is equal to computerChoice THEN
+FUNCTION playRound(humanSelection, computerSelection)
+    SET humanSelection to lowercase
+    IF humanSelection is equal to computerSelection THEN
         DISPLAY "We Draw!"
     ELSE
 
-        IF humanChoice is "rock" and computerChoice is "scissors" THEN
+        IF humanSelection is "rock" and computerSelection is "scissors" THEN
             DISPLAY "You win! rock beats scissors"
             SET humanScore plus one
 
-        IF ELSE humanChoice is "rock" and computerChoice is "paper" THEN
+        IF ELSE humanSelection is "rock" and computerSelection is "paper" THEN
             DISPLAY "You lose! paper beats rock"
             SET computerScore plus one
 
-        IF ELSE humanChoice is "paper" and computerChoice is "rock" THEN
+        IF ELSE humanSelection is "paper" and computerSelection is "rock" THEN
             DISPLAY "You win! paper beats rock"
             SET humanScore plus one
 
-        IF ELSE humanChoice is "paper" and computerChoice is "scissors" THEN
+        IF ELSE humanSelection is "paper" and computerSelection is "scissors" THEN
             DISPLAY "You lose! scissors beats paper"
             SET computerScore plus one
 
-        IF ELSE humanChoice is "scissors" and computerChoice is "paper" THEN
+        IF ELSE humanSelection is "scissors" and computerSelection is "paper" THEN
             DISPLAY "You win! scissors beats paper"
             SET humanScore plus one
 
@@ -48,3 +48,6 @@ ENDFUCTION
 
 SET computerScore to 0
 SET humanScore to 0
+
+CALL getComputerChoice() to computerSelection
+CALL getHumanChoice() to humanSelection
