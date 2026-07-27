@@ -1,0 +1,10 @@
+FUNCTION getComputerChoice()
+    SET randomNumber to random number between 1 and 3
+    IF randomNumber EQUAL 1 THEN
+        SET choice to rock
+    IF ELSE randomNumber EQUAL 2 THEN
+        SET choice to paper
+    ELSE 
+        SET choice to scissors
+    RETURN choice
+ENDFUCTION
