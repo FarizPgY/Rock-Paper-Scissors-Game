@@ -7,12 +7,12 @@ FUNCTION getComputerChoice()
     ELSE 
         SET selection to "scissors"
     RETURN selection
-ENDFUCTION
+ENDFUNCTION
 
 FUNCTION getHumanChoice()
     INPUT selection (rock/paper/scissors)
     RETURN selection
-ENDFUCTION
+ENDFUNCTION
 
 FUNCTION playRound(humanSelection, computerSelection)
     SET humanSelection to lowercase
@@ -43,7 +43,7 @@ FUNCTION playRound(humanSelection, computerSelection)
         ELSE 
             DISPLAY "You lose! rock beats scissors"
             SET computerScore plus one
-ENDFUCTION
+ENDFUNCTION
 
 FUNCTION playGame()
     FOR counter from 1 to 5
@@ -57,7 +57,7 @@ FUNCTION playGame()
         DISPLAY "Congratulation! You win with score {humanScore} - {computerScore}"
     ELSE
         DISPLAY "Sorry! You lose with score {humanScore} - {computerScore}"
-ENDFUCTION
+ENDFUNCTION
 
 SET computerScore to 0
 SET humanScore to 0
