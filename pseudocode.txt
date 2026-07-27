@@ -1,17 +1,17 @@
 FUNCTION getComputerChoice()
     SET randomNumber to random number between 1 and 3
     IF randomNumber is equal to 1 THEN
-        SET choice to "rock"
+        SET selection to "rock"
     IF ELSE randomNumber is equal to 2 THEN
-        SET choice to "paper"
+        SET selection to "paper"
     ELSE 
-        SET choice to "scissors"
-    RETURN choice
+        SET selection to "scissors"
+    RETURN selection
 ENDFUCTION
 
 FUNCTION getHumanChoice()
-    INPUT choice (rock/paper/scissors)
-    RETURN choice
+    INPUT selection (rock/paper/scissors)
+    RETURN selection
 ENDFUCTION
 
 FUNCTION playRound(humanSelection, computerSelection)
@@ -43,11 +43,22 @@ FUNCTION playRound(humanSelection, computerSelection)
         ELSE 
             DISPLAY "You lose! rock beats scissors"
             SET computerScore plus one
-        
+ENDFUCTION
+
+FUNCTION playGame()
+    FOR counter from 1 to 5
+        CALL getComputerChoice() to computerSelection
+        CALL getHumanChoice() to humanSelection
+        CALL playRound()
+    NEXT counter
+    IF humanScore is equal to computerScore
+        DISPLAY "We draw with score {humanScore} - {computerScore}"
+    IF ELSE humanScore is greater than computerScore
+        DISPLAY "Congratulation! You win with score {humanScore} - {computerScore}"
+    ELSE
+        DISPLAY "Sorry! You lose with score {humanScore} - {computerScore}"
 ENDFUCTION
 
 SET computerScore to 0
 SET humanScore to 0
-
-CALL getComputerChoice() to computerSelection
-CALL getHumanChoice() to humanSelection
+CALL playGame()
