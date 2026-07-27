@@ -14,3 +14,5 @@ FUNCTION getHumanChoice()
     RETURN choice
 ENDFUCTION
 
+SET computerScore to 0
+SET humanScore to 0
