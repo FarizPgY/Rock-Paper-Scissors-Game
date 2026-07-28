@@ -19,5 +19,12 @@ function getHumanChoice () {
     return selection
 }
 
+function playRound (humanSelection, computerSelection) {
+    if (humanSelection === computerSelection) {
+        console.log("We Draw!")
+    } else {
+
+    }
+}
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
