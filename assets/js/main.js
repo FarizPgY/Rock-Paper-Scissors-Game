@@ -2,45 +2,45 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    let selection;
+    let computerSelection;
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     if (randomNumber === 1) {
-        selection = "rock";
+        computerSelection = "rock";
     } else if (randomNumber === 2) {
-        selection = "paper";
+        computerSelection = "paper";
     } else {
-        selection = "scissors";
+        computerSelection = "scissors";
     }
-    return selection
+    return computerSelection
 }
 
 function getHumanChoice() {
-    let selection = prompt('choose one (Rock/Paper/Scissors): ').toLowerCase();
-    return selection
+    let humanSelection = prompt('choose one (Rock/Paper/Scissors): ').toLowerCase();
+    return humanSelection
 }
 
-function playRound(humanSelection, computerSelection) {
-    if (humanSelection === computerSelection) {
+function playRound(humanStand, computerStand) {
+    if (humanStand === computerStand) {
         console.log("We Draw!");
     } else {
 
-        if (humanSelection === "rock" && computerSelection === "scissors") {
+        if (humanStand === "rock" && computerStand === "scissors") {
             console.log("You win! rock beats scissors");
             humanScore += 1;
 
-        } else if (humanSelection === "rock" && computerSelection === "paper") {
+        } else if (humanStand === "rock" && computerStand === "paper") {
             console.log("You lose! paper beats rock");
             computerScore += 1;
             
-        } else if (humanSelection === "paper" && computerSelection === "rock") {
+        } else if (humanStand === "paper" && computerStand === "rock") {
             console.log("You win! paper beats rock");
             humanScore += 1;
             
-        } else if (humanSelection === "paper" && computerSelection === "scissors") {
+        } else if (humanStand === "paper" && computerStand === "scissors") {
             console.log("You lose! scissors beats paper");
             computerScore += 1;
             
-        } else if (humanSelection === "scissors" && computerSelection === "paper") {
+        } else if (humanStand === "scissors" && computerStand === "paper") {
             console.log("You win! scissors beats paper");
             humanScore += 1;
             
@@ -51,5 +51,7 @@ function playRound(humanSelection, computerSelection) {
         }
     }
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+const humanStand = getHumanChoice();
+const computerStand = getComputerChoice();
+
+playRound()
