@@ -19,4 +19,5 @@ function getHumanChoice () {
     return selection
 }
 
-console.log(getHumanChoice());
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
